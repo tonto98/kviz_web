@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
         title: Text("Kviz Web App"),
       ),
       body: Center(
-        child: Text("Welcome"),
+        child: Text("Welcome!"),
       ),
     );
   }
