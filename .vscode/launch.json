@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "App DEBUG - DEVELOPMENT",
+            "request": "launch",
+            "program": "lib/000_app/config/main_development.dart",
+            "type": "dart",
+            "flutterMode": "debug",            
+        },
+        {
+            "name": "App DEBUG - PRODUCTION",
+            "request": "launch",
+            "program": "lib/000_app/config/main_production.dart",
+            "type": "dart",
+            "flutterMode": "debug",            
+        },
+        {
+            "name": "App release - DEVELOPMENT",
+            "request": "launch",
+            "program": "lib/000_app/config/main_development.dart",
+            "type": "dart",
+            "flutterMode": "release",            
+        },
+        {
+            "name": "App release - PRODUCTION",
+            "request": "launch",
+            "program": "lib/000_app/config/main_production.dart",
+            "type": "dart",
+            "flutterMode": "release",            
+        }
+    ]
+}
