@@ -23,6 +23,9 @@
   <meta name="apple-mobile-web-app-title" content="kviz_web">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- google auth thing-->
+  <meta name="google-signin-client_id" content="1042521797910-m17mtip072m6g1t1ekft4485083rsp67.apps.googleusercontent.com">
+
   <title>kviz_web</title>
   <link rel="manifest" href="manifest.json">
 </head>
@@ -30,6 +33,30 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAHAo7t5UlZDOJC6plcBdaRUabRN2oXm-w",
+    authDomain: "kviz-a185e.firebaseapp.com",
+    projectId: "kviz-a185e",
+    storageBucket: "kviz-a185e.appspot.com",
+    messagingSenderId: "1042521797910",
+    appId: "1:1042521797910:web:84600ab86ef0b854fe4c37",
+    measurementId: "G-P0RTBN7PED"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
@@ -95,28 +122,6 @@
     }
   </script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyAHAo7t5UlZDOJC6plcBdaRUabRN2oXm-w",
-    authDomain: "kviz-a185e.firebaseapp.com",
-    projectId: "kviz-a185e",
-    storageBucket: "kviz-a185e.appspot.com",
-    messagingSenderId: "1042521797910",
-    appId: "1:1042521797910:web:84600ab86ef0b854fe4c37",
-    measurementId: "G-P0RTBN7PED"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 </body>
 </html>

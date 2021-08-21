@@ -31,6 +31,20 @@
             "program": "lib/000_app/config/main_production.dart",
             "type": "dart",
             "flutterMode": "release",            
+        },
+        {
+            "name": "Flutter Chrome",
+            "request": "launch",
+            "program": "lib/000_app/config/main_development.dart",
+            "type": "dart",
+            "args": ["-d", "chrome","--web-port", "7357"],
+        },
+        {
+            "name": "Flutter web serverr",
+            "request": "launch",
+            "program": "lib/000_app/config/main_development.dart",
+            "type": "dart",
+            "args": ["-d", "web-server","--web-port", "7357"],
         }
     ]
 }

@@ -1,7 +1,11 @@
+import 'dart:html';
+
 import 'package:abadus/abadus.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:kviz_web/blocs/auth_bloc/auth_bloc.dart';
+import 'package:kviz_web/repos/user_repo.dart';
 
 class ApplicationCore extends Application {
   static final ApplicationCore _instance = ApplicationCore._internal();
@@ -15,12 +19,16 @@ class ApplicationCore extends Application {
       GlobalKey<NavigatorState>();
 
   // @blocs
+  late AuthenticationBloc _authBloc;
 
   // @repos
+  late UserRepository _userRepository;
 
   // @getters blocs
+  AuthenticationBloc getAuthBloc() => _authBloc;
 
   // @getters repos
+  UserRepository getAuthRepo() => _userRepository;
 
   @override
   String get getCurrentLanguage => 'en';
@@ -34,8 +42,10 @@ class ApplicationCore extends Application {
 
     await Firebase.initializeApp();
 
-    // @init blocs
-
     // @init repos
+    _userRepository = UserRepository();
+
+    // @init blocs
+    _authBloc = AuthenticationBloc()..add(AuthenticationInitialEvent());
   }
 }
