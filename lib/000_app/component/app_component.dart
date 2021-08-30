@@ -2,7 +2,7 @@ import 'package:abadus/abadus.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:kviz_web/blocs/auth_bloc/auth_bloc.dart';
-import 'package:kviz_web/screens/home_page.dart';
+import 'package:kviz_web/screens/entry_page.dart';
 import '../core/application_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +32,7 @@ class AppComponentState extends State<AppComponent> {
         navigatorKey: ApplicationCore.navigatorKey,
         title: 'Kviz (Material) App',
         // theme: myTheme
-        home: HomePage(),
+        home: EntryPage(),
       ),
     );
   }

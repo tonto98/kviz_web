@@ -14,6 +14,8 @@ class UserRepository {
   late String? userEmail;
 
   Future<User?> signInWithGoogle() async {
+    await _auth.setPersistence(Persistence.LOCAL);
+
     final GoogleSignInAccount? googleSignInAccount =
         await googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication =
@@ -26,6 +28,7 @@ class UserRepository {
 
     final UserCredential userCredential =
         await _auth.signInWithCredential(credential);
+
     final User? user = userCredential.user;
 
     if (user != null) {
