@@ -9,6 +9,7 @@ export const newUserSignUp = functions.auth.user().onCreate((user) => {
 			email: user.email,
 			uid: user.uid,
 			photoUrl: user.photoURL,
+			name: user.name,
 			isAdmin: false,
 			quizzes: [],
 		});
@@ -43,6 +44,32 @@ export const getUserQuizzes = functions.https.onRequest(async (request, result) 
 		result.send("error")
 	}
 })
+
+export const getUser = functions.https.onRequest(async (request, result) => {
+	const db = admin.firestore();
+
+	let res_json = {}
+
+	try {
+		// Create a reference to the cities collection
+		const users = db.collection('users');
+
+		// Create a query against the collection
+		const usersResult = await users.where('uid', '==', request.query.uid).get()
+		
+		for (const doc of usersResult.docs) {
+			res_json = (await getDocWithSubcollections(doc))
+		}
+
+		console.log(res_json)
+		result.send(res_json)
+
+	} catch (error) {
+		console.error("Error", "You done fucked up son..")
+		console.error(error)
+		result.send("error")
+	} 
+});
 
 
 
