@@ -7,10 +7,10 @@ abstract class QuizzesEvent {
   List<Object> get props => [];
 }
 
-class QuizzesMyEvent extends QuizzesEvent {
+class QuizzesGetEvent extends QuizzesEvent {
   final String param;
 
-  QuizzesMyEvent(this.param);
+  QuizzesGetEvent(this.param);
 
   @override
   List<Object> get props => [param];

@@ -28,7 +28,7 @@ class ApplicationCore extends Application {
   AuthenticationBloc getAuthBloc() => _authBloc;
 
   // @getters repos
-  UserRepository getAuthRepo() => _userRepository;
+  UserRepository getUserRepo() => _userRepository;
 
   @override
   String get getCurrentLanguage => 'en';
@@ -44,6 +44,7 @@ class ApplicationCore extends Application {
 
     // @init repos
     _userRepository = UserRepository();
+    await _userRepository.init();
 
     // @init blocs
     _authBloc = AuthenticationBloc()..add(AuthenticationInitialEvent());

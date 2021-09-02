@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kviz_web/blocs/auth_bloc/auth_bloc.dart';
+import 'package:kviz_web/screens/home_page.dart';
 import 'package:kviz_web/utils/google_button.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,14 +25,15 @@ class _EntryPageState extends State<EntryPage> {
         child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           builder: (context, state) {
             if (state is AuthenticationSuccess) {
-              return Center(
-                child: Text(state.user.email!),
-              );
+              return HomePage();
             }
-            if (state is AuthenticationFail) {
+            if (state is AuthenticationFail || state is AuthenticationFail) {
               return GoogleButton();
             }
-            return Text("loading");
+            return SpinKitRotatingCircle(
+              color: Colors.blue,
+              size: 50.0,
+            );
           },
         ),
       ),

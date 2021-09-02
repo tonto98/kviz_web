@@ -7,7 +7,11 @@ class QuizzesInitial extends QuizzesState {}
 
 class QuizzesLoading extends QuizzesState {}
 
-class QuizzesSuccess extends QuizzesState {}
+class QuizzesSuccess extends QuizzesState {
+  final QuizzesList quizzes;
+
+  QuizzesSuccess({required this.quizzes});
+}
 
 class QuizzesFail extends QuizzesState {
   final Map<String, dynamic> fail;

@@ -8,7 +8,7 @@ void main() => Production();
 
 class Production extends Env {
   final String appName = 'KvizWeb';
-  final String baseUrl = 'TODO';
+  final String baseUrl = 'https://us-central1-kviz-a185e.cloudfunctions.net/';
   final Color primarySwatch = Colors.red;
   EnvType environmentType = EnvType.PRODUCTION;
 
